@@ -1,0 +1,38 @@
+{
+	"Godot Class": {
+		"prefix": "class",
+		"body": [
+			"using Godot;",
+			"using System;",
+			"",
+			"namespace $1",
+			"{",
+			"/*",
+			" * $2",
+			" *",
+			" * @author $5",
+			" */",
+			"public class $3 : $4 {",
+			"\t// ---  Attributes ---",
+			"\t\t// -- Exported --",
+			"\t\t// -- Properties --",
+			"\t\t// -- Public Attributes --",
+			"\t\t// -- Protected Attributes --",
+			"\t\t// -- Private Attributes --",
+			"\t// --- /Attributes ---",
+			"",
+			"\t// ---  Methods ---",
+			"\t\t// -- Constructor --",
+			"\t\t// -- Overrides --",
+			"\t\t// -- Operators --",
+			"\t\t// -- Public Methods --",
+			"\t\t// -- Protected Methods --",
+			"\t\t// -- Private Methods --",
+			"\t// --- /Methods ---",
+			"",
+			"}",
+			"}"
+		],
+		"description": "Create a new godot class."
+	}
+}

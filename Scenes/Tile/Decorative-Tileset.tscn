@@ -1,0 +1,1637 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Assets/Tile/item-tileset.png" type="Texture" id=1]
+[ext_resource path="res://Assets/Tile/cow.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Tile/arrow.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Tile/wall-tileset.png" type="Texture" id=4]
+
+[sub_resource type="NavigationPolygon" id=1]
+
+vertices = PoolVector2Array( 8, 56, 16, 64, 0, 64, 0, 0, 4, 16, 4, 0, 8, 20 )
+polygons = [ PoolIntArray( 0, 1, 2 ), PoolIntArray( 0, 2, 3, 4 ), PoolIntArray( 3, 5, 4 ), PoolIntArray( 0, 4, 6 ) ]
+outlines = [ PoolVector2Array( 0, 64, 16, 64, 8, 56, 8, 20, 4, 16, 4, 0, 0, 0 ) ]
+_sections_unfolded = [ "Resource" ]
+
+[sub_resource type="NavigationPolygon" id=2]
+
+vertices = PoolVector2Array(  )
+polygons = [  ]
+outlines = [  ]
+_sections_unfolded = [ "Resource" ]
+
+[sub_resource type="NavigationPolygon" id=3]
+
+vertices = PoolVector2Array(  )
+polygons = [  ]
+outlines = [  ]
+_sections_unfolded = [ "Resource" ]
+
+[node name="Decorative-Tileset" type="Node" index="0"]
+
+[node name="Wall_Down" type="Sprite" parent="." index="0"]
+
+position = Vector2( 0, 320 )
+texture = ExtResource( 1 )
+centered = false
+hframes = 2
+region_enabled = true
+region_rect = Rect2( 0, 256, 64, 64 )
+_sections_unfolded = [ "Animation", "Offset", "Region", "Transform" ]
+
+[node name="WallG" type="Node" parent="." index="1"]
+
+editor/display_folded = true
+
+[node name="Walls" type="Node" parent="WallG" index="0"]
+
+[node name="WallS_TL" type="Sprite" parent="WallG/Walls" index="0"]
+
+editor/display_folded = true
+position = Vector2( 64, 384 )
+texture = ExtResource( 1 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 64, 64, 64, 64 )
+_sections_unfolded = [ "Offset", "Region", "Transform" ]
+
+[node name="Collision" type="StaticBody2D" parent="WallG/Walls/WallS_TL" index="0"]
+
+position = Vector2( 32, 32 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+_sections_unfolded = [ "Transform" ]
+
+[node name="Polygon" type="CollisionPolygon2D" parent="WallG/Walls/WallS_TL/Collision" index="0"]
+
+position = Vector2( 4, 0 )
+build_mode = 1
+polygon = PoolVector2Array( 28, 32, -16, 32, -16, 12, 12, -16, 28, -16 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="WallS_T" type="Sprite" parent="WallG/Walls" index="1"]
+
+editor/display_folded = true
+position = Vector2( 128, 384 )
+texture = ExtResource( 1 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 128, 64, 64, 64 )
+_sections_unfolded = [ "Offset", "Region", "Transform" ]
+
+[node name="Collision" type="StaticBody2D" parent="WallG/Walls/WallS_T" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+_sections_unfolded = [ "Transform" ]
+
+[node name="Polygon" type="CollisionPolygon2D" parent="WallG/Walls/WallS_T/Collision" index="0"]
+
+position = Vector2( 36, 32 )
+build_mode = 1
+polygon = PoolVector2Array( -36, -16, 28, -16, 28, 32, -36, 32 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="WallS_TR" type="Sprite" parent="WallG/Walls" index="2"]
+
+editor/display_folded = true
+position = Vector2( 192, 384 )
+texture = ExtResource( 1 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 192, 64, 64, 64 )
+_sections_unfolded = [ "Offset", "Region", "Transform" ]
+
+[node name="Collision" type="StaticBody2D" parent="WallG/Walls/WallS_TR" index="0"]
+
+position = Vector2( 32, 32 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+_sections_unfolded = [ "Transform" ]
+
+[node name="Polygon" type="CollisionPolygon2D" parent="WallG/Walls/WallS_TR/Collision" index="0"]
+
+position = Vector2( 4, 0 )
+build_mode = 1
+polygon = PoolVector2Array( -36, -16, -20, -16, 8, 12, 8, 32, -36, 32 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="WallS_L" type="Sprite" parent="WallG/Walls" index="3"]
+
+editor/display_folded = true
+position = Vector2( 64, 448 )
+texture = ExtResource( 1 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 64, 128, 64, 64 )
+_sections_unfolded = [ "Offset", "Region", "Transform" ]
+
+[node name="Collision" type="StaticBody2D" parent="WallG/Walls/WallS_L" index="0"]
+
+position = Vector2( 32, 32 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+_sections_unfolded = [ "Transform" ]
+
+[node name="Polygon" type="CollisionPolygon2D" parent="WallG/Walls/WallS_L/Collision" index="0"]
+
+position = Vector2( 4, 0 )
+build_mode = 1
+polygon = PoolVector2Array( -16, -32, -16, 32, 4, 32, 4, -32 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="WallS_R" type="Sprite" parent="WallG/Walls" index="4"]
+
+editor/display_folded = true
+position = Vector2( 192, 448 )
+texture = ExtResource( 1 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 192, 128, 64, 64 )
+_sections_unfolded = [ "Offset", "Region", "Transform" ]
+
+[node name="Collision" type="StaticBody2D" parent="WallG/Walls/WallS_R" index="0"]
+
+position = Vector2( 32, 32 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+_sections_unfolded = [ "Transform" ]
+
+[node name="Polygon" type="CollisionPolygon2D" parent="WallG/Walls/WallS_R/Collision" index="0"]
+
+position = Vector2( 8, 0 )
+build_mode = 1
+polygon = PoolVector2Array( -16, -32, -16, 32, 4, 32, 4, -32 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="WallS_BL" type="Sprite" parent="WallG/Walls" index="5"]
+
+editor/display_folded = true
+position = Vector2( 64, 512 )
+texture = ExtResource( 1 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 64, 192, 64, 64 )
+_sections_unfolded = [ "Offset", "Region", "Transform" ]
+
+[node name="Collision" type="StaticBody2D" parent="WallG/Walls/WallS_BL" index="0"]
+
+position = Vector2( 32, 32 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+_sections_unfolded = [ "Transform" ]
+
+[node name="Polygon" type="CollisionPolygon2D" parent="WallG/Walls/WallS_BL/Collision" index="0"]
+
+position = Vector2( 4, 0 )
+build_mode = 1
+polygon = PoolVector2Array( 28, 32, 28, -12, 12, -12, 4, -20, 4, -32, -16, -32, -16, -4, -12, 0, -12, 20, 0, 32 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="WallS_B" type="Sprite" parent="WallG/Walls" index="6"]
+
+editor/display_folded = true
+position = Vector2( 128, 512 )
+texture = ExtResource( 1 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 128, 192, 64, 64 )
+_sections_unfolded = [ "Offset", "Region", "Transform" ]
+
+[node name="Collision" type="StaticBody2D" parent="WallG/Walls/WallS_B" index="0"]
+
+position = Vector2( 32, 32 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+_sections_unfolded = [ "Transform" ]
+
+[node name="Polygon" type="CollisionPolygon2D" parent="WallG/Walls/WallS_B/Collision" index="0"]
+
+position = Vector2( 8, 0 )
+build_mode = 1
+polygon = PoolVector2Array( -40, -12, -40, 32, 24, 32, 24, -12 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="WallS_BR" type="Sprite" parent="WallG/Walls" index="7"]
+
+editor/display_folded = true
+position = Vector2( 192, 512 )
+texture = ExtResource( 1 )
+centered = false
+offset = Vector2( 0, -1 )
+region_enabled = true
+region_rect = Rect2( 192, 191, 64, 64 )
+_sections_unfolded = [ "Offset", "Region", "Transform" ]
+
+[node name="Collision" type="StaticBody2D" parent="WallG/Walls/WallS_BR" index="0"]
+
+position = Vector2( 32, 32 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+_sections_unfolded = [ "Transform" ]
+
+[node name="Polygon" type="CollisionPolygon2D" parent="WallG/Walls/WallS_BR/Collision" index="0"]
+
+build_mode = 1
+polygon = PoolVector2Array( -36, -12, -36, 32, -8, 32, 4, 20, 4, 0, 8, -4, 8, -32, -12, -32, -12, -20, -20, -12 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="WallS_DoorOpen" type="Sprite" parent="WallG/Walls" index="8"]
+
+position = Vector2( 128, 576 )
+texture = ExtResource( 1 )
+centered = false
+hframes = 2
+region_enabled = true
+region_rect = Rect2( 128, 256, 64, 64 )
+_sections_unfolded = [ "Animation", "Offset", "Region", "Transform" ]
+
+[node name="WallS_DoorLeft" type="Sprite" parent="WallG/Walls" index="9"]
+
+position = Vector2( 192, 576 )
+texture = ExtResource( 1 )
+centered = false
+offset = Vector2( 1, 0 )
+hframes = 2
+region_enabled = true
+region_rect = Rect2( 193, 256, 62, 64 )
+_sections_unfolded = [ "Animation", "Offset", "Region", "Transform" ]
+
+[node name="WallS_Down_Edge_R" type="Sprite" parent="WallG/Walls" index="10"]
+
+position = Vector2( 64, 640 )
+texture = ExtResource( 1 )
+centered = false
+hframes = 2
+region_enabled = true
+region_rect = Rect2( 640, 64, 64, 64 )
+_sections_unfolded = [ "Animation", "Offset", "Region", "Transform" ]
+
+[node name="WallS_T1" type="Sprite" parent="WallG/Walls" index="11"]
+
+position = Vector2( 192, 640 )
+texture = ExtResource( 1 )
+centered = false
+hframes = 2
+region_enabled = true
+region_rect = Rect2( 704, 64, 64, 118 )
+_sections_unfolded = [ "Animation", "Offset", "Region", "Transform" ]
+
+[node name="WallS_B1" type="Sprite" parent="WallG/Walls" index="12"]
+
+position = Vector2( 256, 640 )
+texture = ExtResource( 1 )
+centered = false
+hframes = 2
+region_enabled = true
+region_rect = Rect2( 768, 64, 64, 118 )
+_sections_unfolded = [ "Animation", "Offset", "Region", "Transform" ]
+
+[node name="WallS_L1" type="Sprite" parent="WallG/Walls" index="13"]
+
+position = Vector2( 384, 640 )
+texture = ExtResource( 1 )
+centered = false
+offset = Vector2( -10, 0 )
+hframes = 2
+region_enabled = true
+region_rect = Rect2( 886, 64, 74, 64 )
+_sections_unfolded = [ "Animation", "Offset", "Region", "Transform" ]
+
+[node name="WallS_R1" type="Sprite" parent="WallG/Walls" index="14"]
+
+position = Vector2( 512, 640 )
+texture = ExtResource( 1 )
+centered = false
+hframes = 2
+region_enabled = true
+region_rect = Rect2( 960, 64, 74, 64 )
+_sections_unfolded = [ "Animation", "Offset", "Region", "Transform" ]
+
+[node name="WallS_Down_Edge_B" type="Sprite" parent="WallG/Walls" index="15"]
+
+position = Vector2( 512, 704 )
+texture = ExtResource( 1 )
+centered = false
+offset = Vector2( 0, 1 )
+hframes = 2
+region_enabled = true
+region_rect = Rect2( 960, 0, 64, 63 )
+_sections_unfolded = [ "Animation", "Offset", "Region", "Transform" ]
+
+[node name="WallS_Down_Edge_T" type="Sprite" parent="WallG/Walls" index="16"]
+
+position = Vector2( 576, 704 )
+texture = ExtResource( 1 )
+centered = false
+offset = Vector2( 0, -64 )
+hframes = 2
+region_enabled = true
+region_rect = Rect2( 1088, 0, 64, 128 )
+_sections_unfolded = [ "Animation", "Offset", "Region", "Transform" ]
+
+[node name="WallS_Down_Edge_L" type="Sprite" parent="WallG/Walls" index="17"]
+
+position = Vector2( 128, 640 )
+texture = ExtResource( 1 )
+centered = false
+hframes = 2
+region_enabled = true
+region_rect = Rect2( 834, 64, 50, 64 )
+_sections_unfolded = [ "Animation", "Offset", "Region", "Transform" ]
+
+[node name="WallS_DoorRight" type="Sprite" parent="WallG/Walls" index="18"]
+
+position = Vector2( 576, 576 )
+texture = ExtResource( 1 )
+centered = false
+hframes = 2
+region_enabled = true
+region_rect = Rect2( 576, 256, 64, 64 )
+_sections_unfolded = [ "Animation", "Offset", "Region", "Transform" ]
+
+[node name="WallS_DoorClosed" type="Sprite" parent="WallG/Walls" index="19"]
+
+position = Vector2( 64, 576 )
+texture = ExtResource( 1 )
+centered = false
+hframes = 2
+region_enabled = true
+region_rect = Rect2( 64, 256, 64, 64 )
+_sections_unfolded = [ "Animation", "Offset", "Region", "Transform" ]
+
+[node name="Towers" type="Node" parent="WallG" index="1"]
+
+[node name="TowerS" type="Sprite" parent="WallG/Towers" index="0"]
+
+position = Vector2( 256, 384 )
+texture = ExtResource( 1 )
+centered = false
+offset = Vector2( 0, -64 )
+region_enabled = true
+region_rect = Rect2( 256, 0, 64, 192 )
+_sections_unfolded = [ "Region", "Transform" ]
+
+[node name="TowerS_TR" type="Sprite" parent="WallG/Towers" index="1"]
+
+position = Vector2( 320, 384 )
+texture = ExtResource( 1 )
+centered = false
+offset = Vector2( 0, -64 )
+region_enabled = true
+region_rect = Rect2( 320, 0, 64, 192 )
+_sections_unfolded = [ "Region", "Transform" ]
+
+[node name="TowerS_TL" type="Sprite" parent="WallG/Towers" index="2"]
+
+position = Vector2( 384, 384 )
+texture = ExtResource( 1 )
+centered = false
+offset = Vector2( 0, -64 )
+region_enabled = true
+region_rect = Rect2( 384, 0, 64, 192 )
+_sections_unfolded = [ "Region", "Transform" ]
+
+[node name="TowerS_BL" type="Sprite" parent="WallG/Towers" index="3"]
+
+position = Vector2( 448, 384 )
+texture = ExtResource( 1 )
+centered = false
+offset = Vector2( 0, -64 )
+region_enabled = true
+region_rect = Rect2( 448, 0, 64, 192 )
+_sections_unfolded = [ "Offset", "Region", "Transform" ]
+
+[node name="TowerS_BR" type="Sprite" parent="WallG/Towers" index="4"]
+
+position = Vector2( 512, 384 )
+texture = ExtResource( 1 )
+centered = false
+offset = Vector2( 0, -64 )
+region_enabled = true
+region_rect = Rect2( 512, 0, 64, 192 )
+_sections_unfolded = [ "Offset", "Region", "Transform" ]
+
+[node name="TowerS_TB" type="Sprite" parent="WallG/Towers" index="5"]
+
+position = Vector2( 576, 384 )
+texture = ExtResource( 1 )
+centered = false
+offset = Vector2( 0, -64 )
+region_enabled = true
+region_rect = Rect2( 576, 0, 64, 192 )
+_sections_unfolded = [ "Offset", "Region", "Transform" ]
+
+[node name="TowerS_LBR" type="Sprite" parent="WallG/Towers" index="6"]
+
+position = Vector2( 256, 576 )
+texture = ExtResource( 1 )
+centered = false
+offset = Vector2( 0, -64 )
+region_enabled = true
+region_rect = Rect2( 256, 192, 64, 160 )
+_sections_unfolded = [ "Region", "Transform" ]
+
+[node name="TowerS_LTR" type="Sprite" parent="WallG/Towers" index="7"]
+
+position = Vector2( 320, 576 )
+texture = ExtResource( 1 )
+centered = false
+offset = Vector2( 0, -64 )
+region_enabled = true
+region_rect = Rect2( 320, 192, 64, 160 )
+_sections_unfolded = [ "Offset", "Region", "Transform" ]
+
+[node name="TowerS_LTB" type="Sprite" parent="WallG/Towers" index="8"]
+
+position = Vector2( 384, 576 )
+texture = ExtResource( 1 )
+centered = false
+offset = Vector2( 0, -64 )
+region_enabled = true
+region_rect = Rect2( 384, 192, 64, 160 )
+_sections_unfolded = [ "Region", "Transform" ]
+
+[node name="TowerS_TBR" type="Sprite" parent="WallG/Towers" index="9"]
+
+position = Vector2( 448, 576 )
+texture = ExtResource( 1 )
+centered = false
+offset = Vector2( 0, -64 )
+region_enabled = true
+region_rect = Rect2( 448, 192, 64, 160 )
+_sections_unfolded = [ "Region", "Transform" ]
+
+[node name="TowerS_Four" type="Sprite" parent="WallG/Towers" index="10"]
+
+position = Vector2( 512, 576 )
+texture = ExtResource( 1 )
+centered = false
+offset = Vector2( 0, -64 )
+region_enabled = true
+region_rect = Rect2( 512, 192, 64, 160 )
+_sections_unfolded = [ "Region", "Transform" ]
+
+[node name="Piles" type="Node" parent="WallG" index="2"]
+
+[node name="PileS_LB3" type="Sprite" parent="WallG/Piles" index="0"]
+
+position = Vector2( 704, 704 )
+texture = ExtResource( 1 )
+centered = false
+offset = Vector2( -64, 0 )
+hframes = 2
+region_enabled = true
+region_rect = Rect2( 1216, 0, 64, 128 )
+_sections_unfolded = [ "Animation", "Offset", "Region", "Transform" ]
+
+[node name="PileO_B3" type="Sprite" parent="WallG/Piles" index="1"]
+
+position = Vector2( 1408, 704 )
+texture = ExtResource( 1 )
+centered = false
+offset = Vector2( -64, 0 )
+hframes = 2
+region_enabled = true
+region_rect = Rect2( 1472, 832, 64, 128 )
+_sections_unfolded = [ "Animation", "Offset", "Region", "Transform" ]
+
+[node name="PileO_B1" type="Sprite" parent="WallG/Piles" index="2"]
+
+position = Vector2( 1472, 704 )
+texture = ExtResource( 1 )
+centered = false
+offset = Vector2( -64, 0 )
+hframes = 2
+region_enabled = true
+region_rect = Rect2( 1536, 960, 128, 64 )
+_sections_unfolded = [ "Animation", "Offset", "Region", "Transform" ]
+
+[node name="PileO_B2" type="Sprite" parent="WallG/Piles" index="3"]
+
+position = Vector2( 1472, 832 )
+texture = ExtResource( 1 )
+centered = false
+offset = Vector2( 0, -54 )
+hframes = 2
+region_enabled = true
+region_rect = Rect2( 1856, 896, 64, 128 )
+_sections_unfolded = [ "Animation", "Offset", "Region", "Transform" ]
+
+[node name="PileS_LT3" type="Sprite" parent="WallG/Piles" index="4"]
+
+position = Vector2( 832, 768 )
+texture = ExtResource( 1 )
+centered = false
+offset = Vector2( -64, -64 )
+hframes = 2
+region_enabled = true
+region_rect = Rect2( 1280, 0, 64, 128 )
+_sections_unfolded = [ "Animation", "Offset", "Region", "Transform" ]
+
+[node name="PileS_RT3" type="Sprite" parent="WallG/Piles" index="5"]
+
+position = Vector2( 832, 768 )
+texture = ExtResource( 1 )
+centered = false
+offset = Vector2( 64, -64 )
+hframes = 2
+region_enabled = true
+region_rect = Rect2( 1280, 0, 64, 128 )
+_sections_unfolded = [ "Animation", "Offset", "Region", "Transform" ]
+
+[node name="Pile_LT1" type="Sprite" parent="WallG/Piles" index="6"]
+
+position = Vector2( 1024, 768 )
+texture = ExtResource( 1 )
+centered = false
+offset = Vector2( -64, -64 )
+hframes = 2
+region_enabled = true
+region_rect = Rect2( 1344, 0, 128, 128 )
+_sections_unfolded = [ "Animation", "Offset", "Region", "Transform" ]
+
+[node name="Pile_RT1" type="Sprite" parent="WallG/Piles" index="7"]
+
+position = Vector2( 1152, 768 )
+texture = ExtResource( 1 )
+centered = false
+offset = Vector2( 0, -64 )
+hframes = 2
+region_enabled = true
+region_rect = Rect2( 1344, 0, 128, 128 )
+_sections_unfolded = [ "Animation", "Offset", "Region", "Transform" ]
+
+[node name="Pile_LT2" type="Sprite" parent="WallG/Piles" index="8"]
+
+position = Vector2( 960, 896 )
+texture = ExtResource( 1 )
+centered = false
+offset = Vector2( 0, -64 )
+hframes = 2
+region_enabled = true
+region_rect = Rect2( 1472, 0, 64, 128 )
+_sections_unfolded = [ "Animation", "Offset", "Region", "Transform" ]
+
+[node name="Pile_RT2" type="Sprite" parent="WallG/Piles" index="9"]
+
+position = Vector2( 1088, 896 )
+texture = ExtResource( 1 )
+centered = false
+offset = Vector2( 32, -64 )
+hframes = 2
+region_enabled = true
+region_rect = Rect2( 1472, 0, 64, 128 )
+_sections_unfolded = [ "Animation", "Offset", "Region", "Transform" ]
+
+[node name="Pile_LD2" type="Sprite" parent="WallG/Piles" index="10"]
+
+position = Vector2( 1024, 896 )
+texture = ExtResource( 1 )
+centered = false
+hframes = 2
+region_enabled = true
+region_rect = Rect2( 1536, 0, 64, 128 )
+_sections_unfolded = [ "Animation", "Offset", "Region", "Transform" ]
+
+[node name="Pile_RD2" type="Sprite" parent="WallG/Piles" index="11"]
+
+position = Vector2( 1216, 896 )
+texture = ExtResource( 1 )
+centered = false
+offset = Vector2( -32, 0 )
+hframes = 2
+region_enabled = true
+region_rect = Rect2( 1536, 0, 64, 128 )
+_sections_unfolded = [ "Animation", "Offset", "Region", "Transform" ]
+
+[node name="PileS_RB3" type="Sprite" parent="WallG/Piles" index="12"]
+
+position = Vector2( 704, 832 )
+texture = ExtResource( 1 )
+centered = false
+offset = Vector2( 64, 0 )
+hframes = 2
+region_enabled = true
+region_rect = Rect2( 1280, 0, 64, 128 )
+_sections_unfolded = [ "Animation", "Offset", "Region", "Transform" ]
+
+[node name="WallW" type="Node" parent="." index="2"]
+
+editor/display_folded = true
+
+[node name="Walls" type="Node" parent="WallW" index="0"]
+
+[node name="WallW_TL" type="Sprite" parent="WallW/Walls" index="0"]
+
+position = Vector2( 640, 384 )
+texture = ExtResource( 1 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 64, 384, 64, 64 )
+_sections_unfolded = [ "Offset", "Region", "Transform" ]
+
+[node name="WallW_T" type="Sprite" parent="WallW/Walls" index="1"]
+
+position = Vector2( 704, 384 )
+texture = ExtResource( 1 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 128, 384, 64, 64 )
+_sections_unfolded = [ "Offset", "Region", "Transform" ]
+
+[node name="WallW_TR" type="Sprite" parent="WallW/Walls" index="2"]
+
+position = Vector2( 767, 384 )
+texture = ExtResource( 1 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 192, 384, 64, 64 )
+_sections_unfolded = [ "Offset", "Region", "Transform" ]
+
+[node name="WallW_R" type="Sprite" parent="WallW/Walls" index="3"]
+
+position = Vector2( 768, 448 )
+texture = ExtResource( 1 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 192, 448, 64, 64 )
+_sections_unfolded = [ "Offset", "Region", "Transform" ]
+
+[node name="WallW_R2" type="Sprite" parent="WallW/Walls" index="4"]
+
+position = Vector2( 640, 448 )
+texture = ExtResource( 1 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 64, 448, 64, 64 )
+_sections_unfolded = [ "Offset", "Region", "Transform" ]
+
+[node name="WallW_BR" type="Sprite" parent="WallW/Walls" index="5"]
+
+position = Vector2( 768, 512 )
+texture = ExtResource( 1 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 192, 512, 64, 64 )
+_sections_unfolded = [ "Offset", "Region", "Transform" ]
+
+[node name="WallW_B" type="Sprite" parent="WallW/Walls" index="6"]
+
+position = Vector2( 704, 512 )
+texture = ExtResource( 1 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 128, 512, 64, 64 )
+_sections_unfolded = [ "Offset", "Region", "Transform" ]
+
+[node name="WallW_BL" type="Sprite" parent="WallW/Walls" index="7"]
+
+position = Vector2( 640, 512 )
+texture = ExtResource( 1 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 64, 512, 64, 64 )
+_sections_unfolded = [ "Offset", "Region", "Transform" ]
+
+[node name="WallW_DoorClose" type="Sprite" parent="WallW/Walls" index="8"]
+
+position = Vector2( 640, 576 )
+texture = ExtResource( 1 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 64, 576, 64, 64 )
+_sections_unfolded = [ "Offset", "Region", "Transform" ]
+
+[node name="WallW_DoorOpen" type="Sprite" parent="WallW/Walls" index="9"]
+
+position = Vector2( 704, 576 )
+texture = ExtResource( 1 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 128, 576, 64, 64 )
+_sections_unfolded = [ "Offset", "Region", "Transform" ]
+
+[node name="WallW_DoorRin" type="Sprite" parent="WallW/Walls" index="10"]
+
+position = Vector2( 768, 576 )
+texture = ExtResource( 1 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 192, 576, 64, 64 )
+_sections_unfolded = [ "Offset", "Region", "Transform" ]
+
+[node name="WallW_DoorLin" type="Sprite" parent="WallW/Walls" index="11"]
+
+position = Vector2( 832, 576 )
+texture = ExtResource( 1 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 256, 576, 64, 64 )
+_sections_unfolded = [ "Offset", "Region", "Transform" ]
+
+[node name="Towers" type="Node" parent="WallW" index="1"]
+
+editor/display_folded = true
+
+[node name="TowerW_BL" type="Sprite" parent="WallW/Towers" index="0"]
+
+position = Vector2( 832, 384 )
+texture = ExtResource( 1 )
+centered = false
+offset = Vector2( 0, -54 )
+region_enabled = true
+region_rect = Rect2( 256, 330, 64, 118 )
+_sections_unfolded = [ "Offset", "Region", "Transform" ]
+
+[node name="TowerW_B" type="Sprite" parent="WallW/Towers" index="1"]
+
+position = Vector2( 896, 384 )
+texture = ExtResource( 1 )
+centered = false
+offset = Vector2( 0, -54 )
+region_enabled = true
+region_rect = Rect2( 320, 330, 64, 118 )
+_sections_unfolded = [ "Offset", "Region", "Transform" ]
+
+[node name="TowerW_BR" type="Sprite" parent="WallW/Towers" index="2"]
+
+position = Vector2( 960, 384 )
+texture = ExtResource( 1 )
+centered = false
+offset = Vector2( 0, -54 )
+region_enabled = true
+region_rect = Rect2( 384, 330, 62, 118 )
+_sections_unfolded = [ "Offset", "Region", "Transform" ]
+
+[node name="TowerW_L" type="Sprite" parent="WallW/Towers" index="3"]
+
+position = Vector2( 1024, 384 )
+texture = ExtResource( 1 )
+centered = false
+offset = Vector2( 0, -54 )
+region_enabled = true
+region_rect = Rect2( 514, 330, 62, 118 )
+_sections_unfolded = [ "Offset", "Region", "Transform", "Visibility" ]
+
+[node name="TowerW_TL" type="Sprite" parent="WallW/Towers" index="4"]
+
+position = Vector2( 1088, 384 )
+texture = ExtResource( 1 )
+centered = false
+offset = Vector2( 0, -54 )
+region_enabled = true
+region_rect = Rect2( 576, 330, 64, 118 )
+_sections_unfolded = [ "Offset", "Region", "Transform" ]
+
+[node name="TowerW_T" type="Sprite" parent="WallW/Towers" index="5"]
+
+position = Vector2( 1152, 384 )
+texture = ExtResource( 1 )
+centered = false
+offset = Vector2( 0, -54 )
+region_enabled = true
+region_rect = Rect2( 640, 330, 64, 118 )
+_sections_unfolded = [ "Offset", "Region", "Transform" ]
+
+[node name="TowerW_TR" type="Sprite" parent="WallW/Towers" index="6"]
+
+position = Vector2( 1216, 384 )
+texture = ExtResource( 1 )
+centered = false
+offset = Vector2( 0, -54 )
+region_enabled = true
+region_rect = Rect2( 1024, 330, 64, 118 )
+_sections_unfolded = [ "Offset", "Region", "Transform" ]
+
+[node name="TowerW" type="Sprite" parent="WallW/Towers" index="7"]
+
+position = Vector2( 1280, 384 )
+texture = ExtResource( 1 )
+centered = false
+offset = Vector2( 0, -54 )
+region_enabled = true
+region_rect = Rect2( 768, 330, 64, 118 )
+_sections_unfolded = [ "Offset", "Region", "Transform" ]
+
+[node name="TowerW_R" type="Sprite" parent="WallW/Towers" index="8"]
+
+position = Vector2( 1344, 384 )
+texture = ExtResource( 1 )
+centered = false
+offset = Vector2( 0, -54 )
+region_enabled = true
+region_rect = Rect2( 832, 330, 64, 118 )
+_sections_unfolded = [ "Offset", "Region", "Transform" ]
+
+[node name="TowerW_4" type="Sprite" parent="WallW/Towers" index="9"]
+
+position = Vector2( 1408, 384 )
+texture = ExtResource( 1 )
+centered = false
+offset = Vector2( 0, -54 )
+region_enabled = true
+region_rect = Rect2( 960, 330, 64, 118 )
+_sections_unfolded = [ "Offset", "Region", "Transform" ]
+
+[node name="WallO" type="Node" parent="." index="3"]
+
+[node name="Walls" type="Node" parent="WallO" index="0"]
+
+[node name="WallO_TL" type="Sprite" parent="WallO/Walls" index="0"]
+
+position = Vector2( 64, 832 )
+texture = ExtResource( 1 )
+centered = false
+hframes = 2
+region_enabled = true
+region_rect = Rect2( 64, 704, 64, 64 )
+_sections_unfolded = [ "Animation", "Offset", "Region", "Transform" ]
+
+[node name="WallO_T" type="Sprite" parent="WallO/Walls" index="1"]
+
+position = Vector2( 128, 832 )
+texture = ExtResource( 1 )
+centered = false
+hframes = 2
+region_enabled = true
+region_rect = Rect2( 128, 704, 64, 64 )
+_sections_unfolded = [ "Animation", "Offset", "Region", "Transform" ]
+
+[node name="WallO_TR" type="Sprite" parent="WallO/Walls" index="2"]
+
+position = Vector2( 192, 832 )
+texture = ExtResource( 1 )
+centered = false
+hframes = 2
+region_enabled = true
+region_rect = Rect2( 192, 704, 64, 64 )
+_sections_unfolded = [ "Animation", "Offset", "Region", "Transform" ]
+
+[node name="WallO_R" type="Sprite" parent="WallO/Walls" index="3"]
+
+position = Vector2( 192, 896 )
+texture = ExtResource( 1 )
+centered = false
+hframes = 2
+region_enabled = true
+region_rect = Rect2( 192, 768, 64, 64 )
+_sections_unfolded = [ "Animation", "Offset", "Region", "Transform" ]
+
+[node name="WallO_R2" type="Sprite" parent="WallO/Walls" index="4"]
+
+position = Vector2( 832, 960 )
+texture = ExtResource( 1 )
+centered = false
+hframes = 2
+region_enabled = true
+region_rect = Rect2( 1024, 896, 108, 64 )
+_sections_unfolded = [ "Animation", "Offset", "Region", "Transform" ]
+
+[node name="WallO_L2" type="Sprite" parent="WallO/Walls" index="5"]
+
+position = Vector2( 1024, 1024 )
+texture = ExtResource( 1 )
+centered = false
+offset = Vector2( -64, 0 )
+hframes = 2
+region_enabled = true
+region_rect = Rect2( 1216, 896, 128, 64 )
+_sections_unfolded = [ "Animation", "Offset", "Region", "Transform" ]
+
+[node name="WallO_R1" type="Sprite" parent="WallO/Walls" index="6"]
+
+position = Vector2( 1152, 1024 )
+texture = ExtResource( 1 )
+centered = false
+hframes = 2
+region_enabled = true
+region_rect = Rect2( 1344, 896, 128, 64 )
+_sections_unfolded = [ "Animation", "Offset", "Region", "Transform" ]
+
+[node name="WallO_Down_Edge_B" type="Sprite" parent="WallO/Walls" index="7"]
+
+position = Vector2( 832, 896 )
+texture = ExtResource( 1 )
+centered = false
+hframes = 2
+region_enabled = true
+region_rect = Rect2( 1024, 832, 64, 64 )
+_sections_unfolded = [ "Animation", "Offset", "Region", "Transform" ]
+
+[node name="WallO_L1" type="Sprite" parent="WallO/Walls" index="8"]
+
+position = Vector2( 896, 1024 )
+texture = ExtResource( 1 )
+centered = false
+offset = Vector2( -54, 0 )
+hframes = 2
+region_enabled = true
+region_rect = Rect2( 1098, 896, 118, 64 )
+_sections_unfolded = [ "Animation", "Offset", "Region", "Transform" ]
+
+[node name="WallO_BR" type="Sprite" parent="WallO/Walls" index="9"]
+
+position = Vector2( 192, 960 )
+texture = ExtResource( 1 )
+centered = false
+hframes = 2
+region_enabled = true
+region_rect = Rect2( 192, 832, 64, 64 )
+_sections_unfolded = [ "Animation", "Offset", "Region", "Transform" ]
+
+[node name="WallO_B" type="Sprite" parent="WallO/Walls" index="10"]
+
+position = Vector2( 128, 960 )
+texture = ExtResource( 1 )
+centered = false
+hframes = 2
+region_enabled = true
+region_rect = Rect2( 128, 832, 64, 64 )
+_sections_unfolded = [ "Animation", "Offset", "Region", "Transform" ]
+
+[node name="WallO_BL" type="Sprite" parent="WallO/Walls" index="11"]
+
+position = Vector2( 64, 960 )
+texture = ExtResource( 1 )
+centered = false
+hframes = 2
+region_enabled = true
+region_rect = Rect2( 64, 832, 64, 64 )
+_sections_unfolded = [ "Animation", "Offset", "Region", "Transform" ]
+
+[node name="WallO_DoorClose" type="Sprite" parent="WallO/Walls" index="12"]
+
+position = Vector2( 64, 1024 )
+texture = ExtResource( 1 )
+centered = false
+hframes = 2
+region_enabled = true
+region_rect = Rect2( 64, 896, 64, 64 )
+_sections_unfolded = [ "Animation", "Offset", "Region", "Transform" ]
+
+[node name="WallO_DoorOpen" type="Sprite" parent="WallO/Walls" index="13"]
+
+position = Vector2( 128, 1024 )
+texture = ExtResource( 1 )
+centered = false
+hframes = 2
+region_enabled = true
+region_rect = Rect2( 128, 896, 64, 64 )
+_sections_unfolded = [ "Animation", "Offset", "Region", "Transform" ]
+
+[node name="WallO_DoorLeft" type="Sprite" parent="WallO/Walls" index="14"]
+
+position = Vector2( 192, 1024 )
+texture = ExtResource( 1 )
+centered = false
+hframes = 2
+region_enabled = true
+region_rect = Rect2( 192, 896, 64, 64 )
+region_filter_clip = true
+_sections_unfolded = [ "Animation", "Offset", "Region", "Transform" ]
+
+[node name="WallO_DoorRight" type="Sprite" parent="WallO/Walls" index="15"]
+
+position = Vector2( 256, 1024 )
+texture = ExtResource( 1 )
+centered = false
+hframes = 2
+region_enabled = true
+region_rect = Rect2( 256, 896, 64, 64 )
+_sections_unfolded = [ "Animation", "Offset", "Region", "Transform" ]
+
+[node name="WallO_L" type="Sprite" parent="WallO/Walls" index="16"]
+
+position = Vector2( 64, 896 )
+texture = ExtResource( 1 )
+centered = false
+hframes = 2
+region_enabled = true
+region_rect = Rect2( 64, 768, 64, 64 )
+_sections_unfolded = [ "Animation", "Offset", "Region", "Transform" ]
+
+[node name="WallO_Down_Edge_R" type="Sprite" parent="WallO/Walls" index="17"]
+
+position = Vector2( 320, 960 )
+texture = ExtResource( 1 )
+centered = false
+hframes = 2
+region_enabled = true
+region_rect = Rect2( 576, 896, 64, 64 )
+_sections_unfolded = [ "Animation", "Offset", "Region", "Transform" ]
+
+[node name="WallO_Down_Edge_L" type="Sprite" parent="WallO/Walls" index="18"]
+
+position = Vector2( 384, 960 )
+texture = ExtResource( 1 )
+centered = false
+hframes = 2
+region_enabled = true
+region_rect = Rect2( 896, 896, 64, 64 )
+_sections_unfolded = [ "Animation", "Offset", "Region", "Transform" ]
+
+[node name="WallO_B2" type="Sprite" parent="WallO/Walls" index="19"]
+
+position = Vector2( 448, 960 )
+texture = ExtResource( 1 )
+centered = false
+hframes = 2
+region_enabled = true
+region_rect = Rect2( 640, 896, 64, 128 )
+_sections_unfolded = [ "Animation", "Offset", "Region", "Transform" ]
+
+[node name="WallO_B1" type="Sprite" parent="WallO/Walls" index="20"]
+
+position = Vector2( 512, 960 )
+texture = ExtResource( 1 )
+centered = false
+hframes = 2
+region_enabled = true
+region_rect = Rect2( 704, 896, 64, 128 )
+_sections_unfolded = [ "Animation", "Offset", "Region", "Transform" ]
+
+[node name="WallO_T2" type="Sprite" parent="WallO/Walls" index="21"]
+
+position = Vector2( 576, 960 )
+texture = ExtResource( 1 )
+centered = false
+hframes = 2
+region_enabled = true
+region_rect = Rect2( 768, 896, 64, 128 )
+_sections_unfolded = [ "Animation", "Offset", "Region", "Transform" ]
+
+[node name="WallO_T1" type="Sprite" parent="WallO/Walls" index="22"]
+
+position = Vector2( 640, 960 )
+texture = ExtResource( 1 )
+centered = false
+hframes = 2
+region_enabled = true
+region_rect = Rect2( 832, 896, 64, 128 )
+_sections_unfolded = [ "Animation", "Offset", "Region", "Transform" ]
+
+[node name="WallO_Down_Edge_T" type="Sprite" parent="WallO/Walls" index="23"]
+
+position = Vector2( 768, 960 )
+texture = ExtResource( 1 )
+centered = false
+offset = Vector2( 0, -64 )
+hframes = 2
+region_enabled = true
+region_rect = Rect2( 960, 896, 64, 128 )
+_sections_unfolded = [ "Animation", "Offset", "Region", "Transform" ]
+
+[node name="Towers" type="Node" parent="WallO" index="1"]
+
+[node name="TowerO_BL" type="Sprite" parent="WallO/Towers" index="0"]
+
+position = Vector2( 256, 832 )
+texture = ExtResource( 1 )
+centered = false
+offset = Vector2( 0, -12 )
+hframes = 2
+region_enabled = true
+region_rect = Rect2( 256, 692, 64, 140 )
+_sections_unfolded = [ "Animation", "Offset", "Region", "Transform" ]
+
+[node name="TowerO_B" type="Sprite" parent="WallO/Towers" index="1"]
+
+position = Vector2( 320, 832 )
+texture = ExtResource( 1 )
+centered = false
+offset = Vector2( 0, -12 )
+hframes = 2
+region_enabled = true
+region_rect = Rect2( 320, 692, 64, 140 )
+_sections_unfolded = [ "Animation", "Offset", "Region", "Transform" ]
+
+[node name="TowerO_BR" type="Sprite" parent="WallO/Towers" index="2"]
+
+position = Vector2( 384, 832 )
+texture = ExtResource( 1 )
+centered = false
+offset = Vector2( 0, -12 )
+hframes = 2
+region_enabled = true
+region_rect = Rect2( 384, 692, 64, 140 )
+_sections_unfolded = [ "Animation", "Offset", "Region", "Transform" ]
+
+[node name="TowerO_T" type="Sprite" parent="WallO/Towers" index="3"]
+
+position = Vector2( 448, 832 )
+texture = ExtResource( 1 )
+centered = false
+offset = Vector2( 0, -12 )
+hframes = 2
+region_enabled = true
+region_rect = Rect2( 448, 692, 64, 140 )
+_sections_unfolded = [ "Animation", "Offset", "Region", "Transform" ]
+
+[node name="TowerO_L" type="Sprite" parent="WallO/Towers" index="4"]
+
+position = Vector2( 512, 832 )
+texture = ExtResource( 1 )
+centered = false
+offset = Vector2( 1, -12 )
+hframes = 2
+region_enabled = true
+region_rect = Rect2( 513, 692, 63, 140 )
+_sections_unfolded = [ "Animation", "Offset", "Region", "Transform" ]
+
+[node name="TowerO_TL" type="Sprite" parent="WallO/Towers" index="5"]
+
+position = Vector2( 576, 832 )
+texture = ExtResource( 1 )
+centered = false
+offset = Vector2( 0, -12 )
+hframes = 2
+region_enabled = true
+region_rect = Rect2( 576, 692, 64, 140 )
+_sections_unfolded = [ "Animation", "Offset", "Region", "Transform" ]
+
+[node name="TowerO_Four" type="Sprite" parent="WallO/Towers" index="6"]
+
+position = Vector2( 640, 832 )
+texture = ExtResource( 1 )
+centered = false
+offset = Vector2( 0, -12 )
+hframes = 2
+region_enabled = true
+region_rect = Rect2( 640, 692, 64, 140 )
+_sections_unfolded = [ "Animation", "Offset", "Region", "Transform" ]
+
+[node name="TowerO_TR2" type="Sprite" parent="WallO/Towers" index="7"]
+
+[node name="Misc" type="Node" parent="." index="0"]
+
+[node name="Roads" type="Sprite" parent="Misc" index="0"]
+
+texture = ExtResource( 1 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 0, 0, 192, 256 )
+_sections_unfolded = [ "Offset", "Region" ]
+
+[node name="Castle_Black_L" type="Sprite" parent="Misc" index="1"]
+
+editor/display_folded = true
+position = Vector2( 192, 128 )
+texture = ExtResource( 1 )
+centered = false
+offset = Vector2( 0, -128 )
+region_enabled = true
+region_rect = Rect2( 192, 0, 64, 192 )
+_sections_unfolded = [ "Offset", "Region", "Transform" ]
+
+[node name="Castle_Black_R" type="Sprite" parent="Misc" index="2"]
+
+editor/display_folded = true
+position = Vector2( 256, 128 )
+texture = ExtResource( 1 )
+centered = false
+offset = Vector2( 0, -128 )
+region_enabled = true
+region_rect = Rect2( 256, 0, 64, 192 )
+_sections_unfolded = [ "Offset", "Region", "Transform" ]
+
+[node name="Castle_White_L" type="Sprite" parent="Misc" index="3"]
+
+editor/display_folded = true
+position = Vector2( 192, 256 )
+texture = ExtResource( 1 )
+centered = false
+offset = Vector2( 0, -64 )
+region_enabled = true
+region_rect = Rect2( 192, 192, 64, 128 )
+_sections_unfolded = [ "Offset", "Region", "Transform" ]
+
+[node name="Castle_White_R" type="Sprite" parent="Misc" index="4"]
+
+position = Vector2( 256, 256 )
+texture = ExtResource( 1 )
+centered = false
+offset = Vector2( 0, -64 )
+region_enabled = true
+region_rect = Rect2( 256, 192, 64, 128 )
+_sections_unfolded = [ "Offset", "Region", "Transform" ]
+
+[node name="SingleTower" type="Sprite" parent="Misc" index="5"]
+
+position = Vector2( 320, 256 )
+texture = ExtResource( 1 )
+centered = false
+offset = Vector2( 0, -64 )
+region_enabled = true
+region_rect = Rect2( 320, 192, 64, 128 )
+_sections_unfolded = [ "Offset", "Region", "Transform" ]
+
+[node name="BigHouse" type="Sprite" parent="Misc" index="6"]
+
+position = Vector2( 384, 192 )
+texture = ExtResource( 1 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 384, 192, 64, 64 )
+_sections_unfolded = [ "Offset", "Region", "Transform" ]
+
+[node name="SmallHouse" type="Sprite" parent="Misc" index="7"]
+
+position = Vector2( 384, 256 )
+texture = ExtResource( 1 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 384, 256, 64, 64 )
+_sections_unfolded = [ "Offset", "Region", "Transform" ]
+
+[node name="Well" type="Sprite" parent="Misc" index="8"]
+
+position = Vector2( 448, 256 )
+texture = ExtResource( 1 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 448, 256, 64, 64 )
+_sections_unfolded = [ "Offset", "Region", "Transform" ]
+
+[node name="Moulin" type="Sprite" parent="Misc" index="9"]
+
+position = Vector2( 320, 64 )
+texture = ExtResource( 1 )
+centered = false
+offset = Vector2( 0, -64 )
+region_enabled = true
+region_rect = Rect2( 320, 0, 64, 128 )
+_sections_unfolded = [ "Offset", "Region", "Transform" ]
+
+[node name="Caravan" type="Sprite" parent="Misc" index="10"]
+
+position = Vector2( 384, 64 )
+texture = ExtResource( 1 )
+centered = false
+offset = Vector2( 0, -64 )
+region_enabled = true
+region_rect = Rect2( 384, 0, 64, 128 )
+_sections_unfolded = [ "Offset", "Region", "Transform" ]
+
+[node name="Statue" type="Sprite" parent="Misc" index="11"]
+
+position = Vector2( 448, 64 )
+texture = ExtResource( 1 )
+centered = false
+offset = Vector2( 0, -64 )
+region_enabled = true
+region_rect = Rect2( 448, 0, 64, 128 )
+_sections_unfolded = [ "Offset", "Region", "Transform" ]
+
+[node name="Pyramid" type="Sprite" parent="Misc" index="12"]
+
+position = Vector2( 512, 64 )
+texture = ExtResource( 1 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 512, 64, 64, 64 )
+_sections_unfolded = [ "Offset", "Region", "Transform" ]
+
+[node name="Grass_1" type="Sprite" parent="Misc" index="13"]
+
+position = Vector2( 640, 128 )
+texture = ExtResource( 1 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 640, 128, 64, 64 )
+_sections_unfolded = [ "Offset", "Region", "Transform" ]
+
+[node name="Fountain_Small" type="Sprite" parent="Misc" index="14"]
+
+position = Vector2( 320, 128 )
+texture = ExtResource( 1 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 320, 128, 64, 64 )
+_sections_unfolded = [ "Offset", "Region", "Transform" ]
+
+[node name="Fountain_Large" type="Sprite" parent="Misc" index="15"]
+
+position = Vector2( 384, 128 )
+texture = ExtResource( 1 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 384, 128, 64, 64 )
+_sections_unfolded = [ "Offset", "Region", "Transform" ]
+
+[node name="TreeGroup_L" type="Sprite" parent="Misc" index="16"]
+
+position = Vector2( 704, 128 )
+texture = ExtResource( 1 )
+centered = false
+offset = Vector2( 0, -64 )
+region_enabled = true
+region_rect = Rect2( 704, 64, 64, 128 )
+_sections_unfolded = [ "Offset", "Region", "Transform" ]
+
+[node name="TreeGroup_R" type="Sprite" parent="Misc" index="17"]
+
+position = Vector2( 768, 128 )
+texture = ExtResource( 1 )
+centered = false
+offset = Vector2( 0, -64 )
+region_enabled = true
+region_rect = Rect2( 768, 64, 64, 128 )
+_sections_unfolded = [ "Offset", "Region", "Transform" ]
+
+[node name="PineTree" type="Sprite" parent="Misc" index="18"]
+
+position = Vector2( 1016, 128 )
+texture = ExtResource( 1 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 832, 128, 64, 64 )
+_sections_unfolded = [ "Offset", "Region", "Transform" ]
+
+[node name="Cow" type="Sprite" parent="Misc" index="19"]
+
+position = Vector2( 1092, 152 )
+texture = ExtResource( 2 )
+centered = false
+region_rect = Rect2( 832, 128, 64, 64 )
+_sections_unfolded = [ "Offset", "Region", "Transform" ]
+
+[node name="PineTreeGroup_L" type="Sprite" parent="Misc" index="20"]
+
+position = Vector2( 896, 128 )
+texture = ExtResource( 1 )
+centered = false
+offset = Vector2( 0, -64 )
+region_enabled = true
+region_rect = Rect2( 896, 64, 64, 128 )
+_sections_unfolded = [ "Offset", "Region", "Transform" ]
+
+[node name="PineTreeGroup_R" type="Sprite" parent="Misc" index="21"]
+
+position = Vector2( 960, 128 )
+texture = ExtResource( 1 )
+centered = false
+offset = Vector2( 0, -64 )
+region_enabled = true
+region_rect = Rect2( 960, 64, 64, 128 )
+_sections_unfolded = [ "Offset", "Region", "Transform" ]
+
+[node name="Tree" type="Sprite" parent="Misc" index="22"]
+
+position = Vector2( 828, 128 )
+texture = ExtResource( 1 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 576, 256, 64, 64 )
+_sections_unfolded = [ "Animation", "Material", "Offset", "Pause", "Region", "Transform", "Visibility", "Z Index" ]
+
+[node name="PlayerStart" type="Sprite" parent="Misc" index="23"]
+
+position = Vector2( 828, 204 )
+texture = ExtResource( 3 )
+centered = false
+region_rect = Rect2( 576, 256, 64, 64 )
+_sections_unfolded = [ "Animation", "Material", "Offset", "Pause", "Region", "Transform", "Visibility", "Z Index" ]
+
+[node name="WallG" type="Node" parent="." index="1"]
+
+[node name="Walls" type="Node" parent="WallG" index="0"]
+
+editor/display_folded = true
+
+[node name="WallS_TL" type="Sprite" parent="WallG/Walls" index="0"]
+
+position = Vector2( 64, 384 )
+texture = ExtResource( 4 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 64, 64, 64, 64 )
+_sections_unfolded = [ "Offset", "Region", "Transform" ]
+
+[node name="WallS_T" type="Sprite" parent="WallG/Walls" index="1"]
+
+position = Vector2( 128, 384 )
+texture = ExtResource( 4 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 128, 64, 64, 64 )
+_sections_unfolded = [ "Offset", "Region", "Transform" ]
+
+[node name="WallS_TR" type="Sprite" parent="WallG/Walls" index="2"]
+
+position = Vector2( 192, 384 )
+texture = ExtResource( 4 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 192, 64, 64, 64 )
+_sections_unfolded = [ "Offset", "Region", "Transform" ]
+
+[node name="WallS_L" type="Sprite" parent="WallG/Walls" index="3"]
+
+position = Vector2( 64, 448 )
+texture = ExtResource( 4 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 64, 128, 64, 64 )
+_sections_unfolded = [ "Offset", "Region", "Transform" ]
+
+[node name="WallS_R" type="Sprite" parent="WallG/Walls" index="4"]
+
+position = Vector2( 192, 448 )
+texture = ExtResource( 4 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 192, 128, 64, 64 )
+_sections_unfolded = [ "Offset", "Region", "Transform" ]
+
+[node name="WallS_BL" type="Sprite" parent="WallG/Walls" index="5"]
+
+position = Vector2( 64, 512 )
+texture = ExtResource( 4 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 64, 192, 64, 64 )
+_sections_unfolded = [ "Offset", "Region", "Transform" ]
+
+[node name="WallS_B" type="Sprite" parent="WallG/Walls" index="6"]
+
+position = Vector2( 128, 512 )
+texture = ExtResource( 4 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 128, 192, 64, 64 )
+_sections_unfolded = [ "Offset", "Region", "Transform" ]
+
+[node name="WallS_BR" type="Sprite" parent="WallG/Walls" index="7"]
+
+position = Vector2( 192, 512 )
+texture = ExtResource( 4 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 192, 192, 64, 64 )
+_sections_unfolded = [ "Offset", "Region", "Transform" ]
+
+[node name="WallS_DoorOpen" type="Sprite" parent="WallG/Walls" index="8"]
+
+position = Vector2( 128, 576 )
+texture = ExtResource( 4 )
+centered = false
+hframes = 2
+region_enabled = true
+region_rect = Rect2( 128, 256, 64, 64 )
+_sections_unfolded = [ "Animation", "Offset", "Region", "Transform" ]
+
+[node name="WallS_DoorClosed" type="Sprite" parent="WallG/Walls" index="9"]
+
+position = Vector2( 64, 576 )
+texture = ExtResource( 4 )
+centered = false
+hframes = 2
+region_enabled = true
+region_rect = Rect2( 64, 256, 64, 64 )
+_sections_unfolded = [ "Animation", "Offset", "Region", "Transform" ]
+
+[node name="Towers" type="Node" parent="WallG" index="1"]
+
+editor/display_folded = true
+
+[node name="TowerS" type="Sprite" parent="WallG/Towers" index="0"]
+
+position = Vector2( 256, 384 )
+texture = ExtResource( 4 )
+centered = false
+offset = Vector2( 0, -64 )
+region_enabled = true
+region_rect = Rect2( 256, 0, 64, 192 )
+_sections_unfolded = [ "Region", "Transform" ]
+
+[node name="TowerS_TR" type="Sprite" parent="WallG/Towers" index="1"]
+
+position = Vector2( 320, 384 )
+texture = ExtResource( 4 )
+centered = false
+offset = Vector2( 0, -64 )
+region_enabled = true
+region_rect = Rect2( 320, 0, 64, 192 )
+_sections_unfolded = [ "Region", "Transform" ]
+
+[node name="TowerS_TL" type="Sprite" parent="WallG/Towers" index="2"]
+
+position = Vector2( 384, 384 )
+texture = ExtResource( 4 )
+centered = false
+offset = Vector2( 0, -64 )
+region_enabled = true
+region_rect = Rect2( 384, 0, 64, 192 )
+_sections_unfolded = [ "Region", "Transform" ]
+
+[node name="TowerS_BL" type="Sprite" parent="WallG/Towers" index="3"]
+
+position = Vector2( 448, 384 )
+texture = ExtResource( 4 )
+centered = false
+offset = Vector2( 0, -64 )
+region_enabled = true
+region_rect = Rect2( 448, 0, 64, 192 )
+_sections_unfolded = [ "Offset", "Region", "Transform" ]
+
+[node name="TowerS_BR" type="Sprite" parent="WallG/Towers" index="4"]
+
+position = Vector2( 512, 384 )
+texture = ExtResource( 4 )
+centered = false
+offset = Vector2( 0, -64 )
+region_enabled = true
+region_rect = Rect2( 512, 0, 64, 192 )
+_sections_unfolded = [ "Offset", "Region", "Transform" ]
+
+[node name="TowerS_LBR" type="Sprite" parent="WallG/Towers" index="5"]
+
+position = Vector2( 256, 576 )
+texture = ExtResource( 4 )
+centered = false
+offset = Vector2( 0, -64 )
+region_enabled = true
+region_rect = Rect2( 256, 192, 64, 192 )
+_sections_unfolded = [ "Region", "Transform" ]
+
+[node name="TowerS_LTR" type="Sprite" parent="WallG/Towers" index="6"]
+
+position = Vector2( 320, 576 )
+texture = ExtResource( 4 )
+centered = false
+offset = Vector2( 0, -64 )
+region_enabled = true
+region_rect = Rect2( 320, 192, 64, 192 )
+_sections_unfolded = [ "Offset", "Region", "Transform" ]
+
+[node name="TowerS_LTB" type="Sprite" parent="WallG/Towers" index="7"]
+
+position = Vector2( 384, 576 )
+texture = ExtResource( 4 )
+centered = false
+offset = Vector2( 0, -64 )
+region_enabled = true
+region_rect = Rect2( 384, 192, 64, 192 )
+_sections_unfolded = [ "Region", "Transform" ]
+
+[node name="TowerS_TBR" type="Sprite" parent="WallG/Towers" index="8"]
+
+position = Vector2( 448, 576 )
+texture = ExtResource( 4 )
+centered = false
+offset = Vector2( 0, -64 )
+region_enabled = true
+region_rect = Rect2( 448, 192, 64, 192 )
+_sections_unfolded = [ "Region", "Transform" ]
+
+[node name="TowerS_Four" type="Sprite" parent="WallG/Towers" index="9"]
+
+position = Vector2( 512, 576 )
+texture = ExtResource( 4 )
+centered = false
+offset = Vector2( 0, -64 )
+region_enabled = true
+region_rect = Rect2( 512, 192, 64, 192 )
+_sections_unfolded = [ "Region", "Transform" ]
+
+

@@ -1,0 +1,13 @@
+# Remove imported files.
+.import/
+asset-pack/
+superpowers-asset-pack-master/
+*.kra
+*.kra~
+
+# Remove DS_Stores.
+**/*.DS_Store
+
+# Ignore mono files.
+.mono/
+Properties/

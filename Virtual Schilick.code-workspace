@@ -1,0 +1,71 @@
+{
+	"folders": [
+		{
+			"path": ".",
+			"name": "GMTK - Jam"
+		}
+	],
+	"settings": {
+		// Exclude import files.
+		"files.exclude": {
+			"**/.git": true,
+			"**/.svn": true,
+			"**/.hg": true,
+			"**/CVS": true,
+			"**/.DS_Store": true,
+			"**/*.import": true
+		},
+		
+		// Flatten the todo-tree.
+		"todo-tree.flat": true,
+
+		// Auto include C# files into compilation.
+		"csproj.itemType": {
+			".cs": "Compile",
+		},
+		"csproj.silentDeletion": false,
+		"csproj.includeRegex": "(.*).cs",
+		"csproj.excludeRegex": ".*OLD.*",
+
+		// GodotTools settings.
+		"GodotTools.completeNodePath": true,
+		"GodotTools.editorPath": "/Applications/GodotSharp.app/Contents/MacOS/GodotSharp",
+		"GodotTools.workspaceDocumentWithMarkdown": true,
+
+		// Use tabs instead of spaces.
+		"editor.insertSpaces": false,
+		"explorer.confirmDragAndDrop": false,
+
+		// C# Settings.
+		"csharp.suppressDotnetInstallWarning": true,
+		"csharp.suppressDotnetRestoreNotification": true,
+		"omnisharp.loggingLevel": "debug",
+
+		// Git settings.
+		"gitlens.advanced.messages": {
+			"suppressShowKeyBindingsNotice": true
+		},
+		"gitlens.historyExplorer.enabled": true,
+		"gitlens.keymap": "alternate",
+		"git.enableSmartCommit": true,
+		"git.autofetch": true,
+
+		"todo-tree.highlight": true,
+		"todo-tree.iconColours": {
+			"DEBUG": "#5f2387",
+			"TODO": "green",
+			"FIXME": "red",
+			"STUB": "#8e0f01",
+			"NOTE": "#e57200"
+		},
+		"todo-tree.tags": [
+			"TODO",
+			"DEBUG",
+			"FIXME",
+			"STUB",
+			"NOTE"
+		],
+		"todo-tree.showInExplorer": false, 
+		"todo-tree.regex": "((//|#|<!--|;|\\* |/\\*|/\\*\\*)\\s*($TAGS)(?: :|:)?|^\\s*- \\[ \\])"
+	}
+}

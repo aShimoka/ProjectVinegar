@@ -1,0 +1,51 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Assets/Tile/background-tileset.png" type="Texture" id=1]
+
+[node name="Background_Tileset" type="Node" index="0"]
+
+[node name="Grass" type="Sprite" parent="." index="0"]
+
+texture = ExtResource( 1 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 0, 0, 256, 192 )
+_sections_unfolded = [ "Animation", "Offset", "Region", "Transform" ]
+
+[node name="Wood" type="Sprite" parent="." index="1"]
+
+position = Vector2( 256, 0 )
+texture = ExtResource( 1 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 256, 0, 256, 192 )
+_sections_unfolded = [ "Animation", "Offset", "Region", "Transform" ]
+
+[node name="Gravel" type="Sprite" parent="." index="2"]
+
+position = Vector2( 512, 0 )
+texture = ExtResource( 1 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 512, 0, 256, 192 )
+_sections_unfolded = [ "Animation", "Offset", "Region", "Transform" ]
+
+[node name="Stone" type="Sprite" parent="." index="3"]
+
+position = Vector2( 768, 0 )
+texture = ExtResource( 1 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 768, 0, 192, 192 )
+_sections_unfolded = [ "Animation", "Offset", "Region", "Transform" ]
+
+[node name="Water" type="Sprite" parent="." index="4"]
+
+position = Vector2( 960, 0 )
+texture = ExtResource( 1 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 960, 0, 192, 192 )
+_sections_unfolded = [ "Animation", "Offset", "Region", "Transform" ]
+
+

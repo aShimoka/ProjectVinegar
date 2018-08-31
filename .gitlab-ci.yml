@@ -1,0 +1,19 @@
+image: "yshimoka/godotexporter"
+
+build:
+  stage: build
+  script:
+    - mkdir -p ~/.config
+    - mkdir -p ~/.local/share/godot/templates/3.0.6.stable.mono/
+    - mkdir -p ~/.cache
+    - mkdir build
+    - cp -r /srv/godot/bin/editor_data/templates/* ~/.local/share/godot/templates/3.0.6.stable.mono/
+    - rm /srv/godot/bin/._sc_
+    - godot -v --export "Windows Desktop" build/ProjectVinegar.exe
+    - godot -v --export "Mac OSX" build/ProjectVinegar.dmg
+  artifacts:
+    paths:
+    - build/*
+
+after_script:
+  - ls build

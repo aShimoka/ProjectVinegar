@@ -1,0 +1,32 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=3
+
+[application]
+
+config/name="GMTK_GameJam"
+run/main_scene="res://Scenes/World.tscn"
+
+[display]
+
+window/size/width=1920
+window/size/height=1080
+window/size/test_width=1280
+window/size/test_height=720
+
+[mono]
+
+export/include_scripts_content=true
+run/main_scene="res://World.tscn"
+
+[rendering]
+
+quality/2d/use_pixel_snap=true
+quality/filters/anisotropic_filter_level=1
+environment/default_clear_color=Color( 0.976563, 0.0305176, 0.0970364, 1 )
